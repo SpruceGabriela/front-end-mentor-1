@@ -33,9 +33,9 @@ body {
 .rating {
   background-color: var(--rating-card);
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   height: 100%;
-  max-height: 400px;
+  max-height: 350px;
   border-radius: 30px;
   padding: 20px;
   box-sizing: border-box;
@@ -81,4 +81,44 @@ body {
 .rating_submit:hover {
   color: var(--orange);
   background-color: var(--white);
+}
+
+.rating_options {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 0;
+  justify-content: space-between;
+  display: flex;
+}
+
+/* js checkboxes */
+
+.rating_option {
+  height: 45px;
+  width: 45px;
+  background-color: hsl(213, 19%, 21%);
+  color: var(--medium-gray);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkbox:checked + .rating_option {
+  background-color: var(--medium-gray);
+  color: var(--white);
+}
+
+.rating_option:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.checkbox {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 99999999px;
 }
