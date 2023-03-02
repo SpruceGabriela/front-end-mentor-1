@@ -1,4 +1,20 @@
+:root {
+  --dark-blue: hsl(216, 12%, 8%);
+  --rating-card: hsl(213, 19%, 18%);
+  --white: hsl(0, 0%, 100%);
+  --orange: hsl(25, 97%, 53%);
+  --light-gray: hsl(217, 12%, 63%);
+  --medium-gray: hsl(216, 12%, 54%);
+  --paragraph-size: 15px;
+}
+
 body {
   padding: 0;
   margin: 0;
+  background-color: var(--dark-blue);
+  font-family: 'Overpass', sans-serif;
+}
+
+.rating {
+  background-color: var(--rating-card);
 }
