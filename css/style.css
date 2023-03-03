@@ -44,6 +44,23 @@ body {
   justify-content: space-evenly;
 }
 
+.rating_feedback {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+}
+
+.rating_feedback.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .rating_icon {
   height: 45px;
   width: 45px;
