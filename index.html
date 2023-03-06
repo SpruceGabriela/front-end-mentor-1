@@ -24,7 +24,7 @@
       </svg>
     </div>
     <h3 class="rating_feedback-result">
-      You selected 4 out of ${number}
+      You selected 4 out of <span></span>
     </h3>
     <h1 class="rating_title">Thank you!</h1>
     <p class="rating_subtitle">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
@@ -38,7 +38,14 @@
     <h1 class="rating_title">How did we do?</h1>
     <p class="rating_subtitle">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
     <div class="rating_options"></div>
-    <button type="submit" class="rating_submit">Submit</button>
+    <button type="submit" class="rating_submit" disabled>
+      <div class="loading">
+        <span class="circle circle-1"></span>
+        <span class="circle circle-2"></span>
+        <span class="circle circle-3"></span>
+      </div>
+      <p>Submit</p>
+    </button>
   </form>
   <div class="attribution">
     <span>Challenge by</span> <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

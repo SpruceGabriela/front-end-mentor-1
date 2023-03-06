@@ -24,13 +24,19 @@ const handleCheckboxClick = (el) => {
   const allCheckboxes = document.querySelectorAll(".checkbox");
   allCheckboxes.forEach((item) => item.checked = false);
   el.checked = true;
+  submitButton.disabled = false;
   checked = el.getAttribute("id");
 }
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  
+  submitButton.classList.add("loading");
+
+  const ratingResult = feedbackModal.querySelector(".rating_feedback-result span");
+  ratingResult.textContent = checked;
+
   setTimeout(() => {
-    feedbackModal.classList.add("active")
-  }, 5000)
-})
+    feedbackModal.classList.add("active");
+    submitButton.classList.remove("loading");
+  }, 4000);
+});

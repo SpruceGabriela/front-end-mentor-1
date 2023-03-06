@@ -53,12 +53,23 @@ body {
   margin: auto;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s ease-in;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .rating_feedback.active {
   opacity: 1;
   visibility: visible;
+}
+
+.rating_feedback-result {
+  background-color: hsl(213, 19%, 21%);
+  color: var(--orange);
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 20px;
 }
 
 .rating_icon {
@@ -83,6 +94,11 @@ body {
   font-size: 15px;
 }
 
+.loading {
+  display: none;
+  gap: 6px;
+}
+
 .rating_submit {
   border: 0;
   border-radius: 20px;
@@ -92,7 +108,23 @@ body {
   color: var(--white);
   background-color: var(--orange);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s;
+}
+
+.rating_submit:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+}
+
+.rating_submit.loading p {
+  display: none;
+}
+
+.rating_submit.loading .loading {
+  display: flex;
 }
 
 .rating_submit:hover {
@@ -138,4 +170,48 @@ body {
   visibility: hidden;
   position: absolute;
   right: 99999999px;
+}
+
+/* loading animation */
+
+.circle {
+  height: 16px;
+  width: 16px;
+  display: block;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  animation-timing-function: step-end; 
+  animation: 2s example linear infinite;
+}
+
+.circle-1 {
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  animation-delay: 0.5s;
+}
+
+.circle-3 {
+  animation-delay: 1s;
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
+  }
 }
